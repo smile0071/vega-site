@@ -53,3 +53,4 @@ export async function DELETE(req: Request, { params }: { params: IParams }) {
     return new NextResponse("Internal Server Error.", { status: 500 });
   }
 }
+`
