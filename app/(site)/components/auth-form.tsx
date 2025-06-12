@@ -100,7 +100,7 @@ const AuthForm = () => {
 							<Input
 								type="text"
 								id="name"
-								label="Name"
+								label="Введите имя"
 								placeholder="James Bond"
 								register={register}
 								errors={errors}
@@ -111,7 +111,7 @@ const AuthForm = () => {
 					<Input
 						type="email"
 						id="email"
-						label="Email Address"
+						label="Введите почту"
 						placeholder="example@email.com"
 						register={register}
 						errors={errors}
@@ -121,7 +121,7 @@ const AuthForm = () => {
 					<Input
 						type="password"
 						id="password"
-						label="Password"
+						label="Введите пароль"
 						placeholder="••••••••••"
 						register={register}
 						errors={errors}
@@ -138,14 +138,18 @@ const AuthForm = () => {
 									disabled={isLoading}
 									className="peer hidden"
 								/>
-								<div className={`
+								<div
+									className={`
                 flex items-center justify-center rounded-md py-2 px-4 text-sm font-semibold shadow-sm
                 border transition-colors
-                ${isLoading
-                    ? 'bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed'
-                    : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-blue-400'}
+                ${
+									isLoading
+										? "bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed"
+										: "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-blue-400"
+								}
                 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600
-            `}>
+            `}
+								>
 									Студент
 								</div>
 							</label>
@@ -157,14 +161,18 @@ const AuthForm = () => {
 									disabled={isLoading}
 									className="peer hidden"
 								/>
-								<div className={`
+								<div
+									className={`
                 flex items-center justify-center rounded-md py-2 px-4 text-sm font-semibold shadow-sm
                 border transition-colors
-                ${isLoading
-                    ? 'bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed'
-                    : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-blue-400'}
+                ${
+									isLoading
+										? "bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed"
+										: "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-blue-400"
+								}
                 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600
-            `}>
+            `}
+								>
 									Преподаватель
 								</div>
 							</label>
@@ -172,7 +180,7 @@ const AuthForm = () => {
 					)}
 
 					<Button type="submit" disabled={isLoading} fullWidth>
-						{variant === "LOGIN" ? "Sign in" : "Register"}
+						{variant === "LOGIN" ? "Войти" : "Регистрация"}
 					</Button>
 				</form>
 
@@ -188,7 +196,7 @@ const AuthForm = () => {
 
 						<div className="relative flex justify-center text-sm">
 							<span className="bg-white px-2 text-gray-500">
-								Or continue with
+								Или продолжи с
 							</span>
 						</div>
 					</div>
@@ -208,14 +216,10 @@ const AuthForm = () => {
 				</div>
 
 				<div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
-					<p>
-						{variant === "LOGIN"
-							? "New to Messenger?"
-							: "Already have an account?"}
-					</p>
+					<p>{variant === "LOGIN" ? "Нет аккаунта?" : "Уже есть аккаунт?"}</p>
 
 					<a onClick={toggleVariant} className="underline cursor-pointer">
-						{variant === "LOGIN" ? "Create an account" : "Log in"}
+						{variant === "LOGIN" ? "Создать аккаунт" : "Войти"}
 					</a>
 				</div>
 			</div>
